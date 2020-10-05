@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://jorgesanchez.net/manuales/gbd/sgbd.html -->
+<html lang="es" class="wf-museosans-n3-active wf-museosans-n7-active wf-museoslab-n7-active wf-museoslab-n8-active wf-sourcecodepro-n7-active wf-sourcecodepro-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title> Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos</title>
+    <script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/f(6).txt"></script><script type="text/javascript" async="" src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/ga.js"></script><script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/osd.js"></script><script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/f(6).txt"></script><script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/f(7).txt" id="google_shimpl"></script><script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/cgm1lsq.js"></script>
+    <style type="text/css">.tk-museo-sans{font-family:"museo-sans",sans-serif;}.tk-museo-slab{font-family:"museo-slab",serif;}.tk-source-code-pro{font-family:"source-code-pro",sans-serif;}</style><style type="text/css">@font-face{font-family:tk-museo-sans-n3;src:url(https://use.typekit.net/af/620bf8/00000000000000000000e7fe/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/620bf8/00000000000000000000e7fe/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/620bf8/00000000000000000000e7fe/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-display:auto;}@font-face{font-family:tk-museo-sans-n7;src:url(https://use.typekit.net/af/e3ca36/00000000000000000000e805/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/e3ca36/00000000000000000000e805/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/e3ca36/00000000000000000000e805/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:tk-museo-slab-n7;src:url(https://use.typekit.net/af/c225e2/000000000000000000011aff/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/c225e2/000000000000000000011aff/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/c225e2/000000000000000000011aff/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:tk-museo-slab-n8;src:url(https://use.typekit.net/af/a09522/00000000000000000000ec0b/27/l?subset_id=2&fvd=n8&v=3) format("woff2"),url(https://use.typekit.net/af/a09522/00000000000000000000ec0b/27/d?subset_id=2&fvd=n8&v=3) format("woff"),url(https://use.typekit.net/af/a09522/00000000000000000000ec0b/27/a?subset_id=2&fvd=n8&v=3) format("opentype");font-weight:800;font-style:normal;font-display:auto;}@font-face{font-family:tk-source-code-pro-n7;src:url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:tk-source-code-pro-n4;src:url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}</style><script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/manual.css">
+<link rel="preload" href="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/f(8).txt" as="script"><script type="text/javascript" src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/f(8).txt"></script><link rel="preload" href="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/f(9).txt" as="script"><style type="text/css">@font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/620bf8/00000000000000000000e7fe/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/620bf8/00000000000000000000e7fe/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/620bf8/00000000000000000000e7fe/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-display:auto;}@font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/e3ca36/00000000000000000000e805/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/e3ca36/00000000000000000000e805/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/e3ca36/00000000000000000000e805/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:museo-slab;src:url(https://use.typekit.net/af/c225e2/000000000000000000011aff/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/c225e2/000000000000000000011aff/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/c225e2/000000000000000000011aff/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:museo-slab;src:url(https://use.typekit.net/af/a09522/00000000000000000000ec0b/27/l?subset_id=2&fvd=n8&v=3) format("woff2"),url(https://use.typekit.net/af/a09522/00000000000000000000ec0b/27/d?subset_id=2&fvd=n8&v=3) format("woff"),url(https://use.typekit.net/af/a09522/00000000000000000000ec0b/27/a?subset_id=2&fvd=n8&v=3) format("opentype");font-weight:800;font-style:normal;font-display:auto;}@font-face{font-family:source-code-pro;src:url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:source-code-pro;src:url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}</style><script type="text/javascript" src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/f(9).txt"></script></head>
+<body>
+
+<div id="btMenu">
+    <div id="franja1" class="franja" style="transform: rotate(0deg); top: 0px;"></div>
+    <div id="franja2" class="franja" style=""></div>
+    <div id="franja3" class="franja" style="transform: rotate(0deg); top: 66%;"></div>
+</div>
+
+
+
+<header style="left: 0px; right: 0px;">
+    <div id="logo">
+        <h5 class=titulo5 > Bases de datos </h5>
+    </div>
+</header>
+
+<section id="cuerpo" style="left: 0px; right: 0px;">
+    <h1 class="superPrincipal">Manual de Gestión de Bases de Datos</h1>
+    <h1 class="titulo1"><span class="numero0">[1] </span><br>Sistemas Gestores de Bases de Datos</h1>
+  
+    
+
+<div id="_idContainer028" class="Marco-de-texto-b-sico" style="margin: 0px auto;">
+    <h2 class="titulo2" id="h21"><span class="numero2">[1.1] </span><a id="_idTextAnchor000"></a>datos y archivos</h2>
+    <h3 class="titulo3"><span class="numero3">[1.1.1]</span><a id="_idTextAnchor001"></a>la necesidad de gestionar
+        información</h3>
+    <p class="Normal2">En el mundo actual existe una cada vez mayor demanda de gestión de la información. No es una
+        demanda nueva, todas las sociedades a lo largo de la historia han tenido esta necesidad. Desde el principio de
+        los tiempos se ha necesitado disponer de herramientas que facilitaran la gestión de los datos ya que, como
+        herramienta, el ser humano al principio sólo disponía de su memoria y cálculo inmediato y, como mucho, de la
+        ayuda de sus dedos.</p>
+    <p class="Normal">La escritura fue la herramienta que permitió al ser humano almacenar información y realizar
+        cálculos sobre ella. Además de permitir compartir esa información entre diferentes personas, también posibilitó
+        que los datos se guardaran de manera continua e incluso estuvieran disponibles para las siguientes generaciones.
+        Los problemas actuales con la privacidad ya aparecieron con la propia escritura y así el cifrado de datos es una
+        técnica tan antigua como la propia escritura para conseguir uno de los todavía requisitos fundamentales de la
+        gestión de datos, la seguridad. </p>
+    <p class="Normal">Cuanto más se han desarrollado las sociedades, mejores métodos se han desarrollado para gestionar
+        la información y, a la vez, más datos se han necesitado gestionar. Para poder almacenar datos y cada vez más
+        datos, el ser humano ideó nuevas herramientas: archivos, cajones, carpetas y fichas en las que se almacenaban
+        los datos. </p>
+    <p class="Normal">Antes de la aparición de las computadoras, el tiempo requerido para manipular estos datos era
+        enorme. Sin embargo el proceso de aprendizaje era relativamente sencillo, ya que se usaban elementos que las
+        personas manejaban desde su infancia.</p>
+    <p class="Normal">Por esa razón, la informática se adaptó para que la terminología en el propio ordenador se
+        pareciera a los términos de organización de datos clásicos. Así, en informática se sigue hablado de ficheros,
+        formularios, carpetas, directorios,....</p>
+    <p class="Normal">En estos últimos años, la demanda ha crecido a niveles espectaculares debido al acceso
+        multitudinario a Internet y a los enormes flujos de información que generan los usuarios. Cada año la necesidad
+        de almacenar información crece exponencialmente en un frenesí que, por ahora, no parece tener fin.</p>
+    <p class="Normal">Desde la aparición de las primeras computadoras, se intentó automatizar la gestión de los datos.
+        El propio nombre <strong class="Negritta">Informática</strong> hace referencia al hecho de ser una ciencia que
+        trabaja con información. Por ello las bases de datos son una de las aplicaciones más antiguas de la informática.
+    </p>
+    <h3 class="titulo3"><span class="numero3">[1.1.2]</span><a id="_idTextAnchor002"></a>datos e información</h3>
+    <p class="Normal2">Tradicionalmente siempre se ha separado el concepto de <strong class="Negritta">dato </strong>sobre
+        el de <strong class="Negritta">información</strong>. </p>
+    <p class="Normal">Un dato es una propiedad en <em class="cursiva">crudo</em>, es decir, sin contextualizar. Por
+        ejemplo <em class="cursiva">Sánchez </em>y <em class="cursiva">33</em> son datos. Desde el punto de vista de la
+        computación, ambos datos se pueden almacenar. Sin embargo, no podemos considerarlos información hasta que no les
+        demos significado. Si decimos que <em class="cursiva">Sánchez</em> es un apellido y que <em class="cursiva">33</em> son los grados centígrados de temperatura que hace ahora en la calle, esos datos
+        pasan a ser información.</p>
+    <p class="Normal">La información tiene una importancia humana, es interpretable, reconocible, presentable,.. El dato
+        es simplemente el paso previo. Resumiendo: todo dato debe de ser procesado para obtener información, y es la
+        información lo que nos interesa a los seres humanos.</p>
+    <p class="Normal">Como veremos más adelante, los datos se convierten en información gracias a los <strong class="Negritta">metadatos</strong>: datos que sirven para describir otros datos.</p>
+    <h3 class="titulo3"><span class="numero3">[1.1.3]</span><a id="_idTextAnchor003"></a>Sistemas de Información</h3>
+    <h4 class="titulo"><span class="numeroOculto">1</span>la empresa como sistema</h4>
+    <p class="Normal2">Según la RAE, la definición de sistema es <em class="cursiva">“Conjunto de cosas que
+            ordenadamente relacionadas entre sí contribuyen a un determinado objeto”</em> . </p>
+    <p class="Normal">La clientela fundamental del profesional de la informática es la empresa, sin distinguir entre la
+        empresa privada y las entidades públicas. Una empresa está formada por diversos elementos que son comunes: el
+        <strong class="Negritta">capital</strong>, los <strong class="Negritta">recursos humanos</strong>, los <strong class="Negritta">inmuebles</strong>, los <strong class="Negritta">servicios</strong> que presta, etc. Todos
+        ellos forman el sistema de la empresa.</p>
+    <p class="Normal">El sistema completo que forma la empresa, por otra parte, se suele dividir en los siguientes
+        subsistemas:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Subsistema productivo.</strong> También llamado subsistema real o
+            físico. Representa la parte de la empresa encargada de gestionar la producción de la misma.
+        </li>
+        <li class="punto"><strong class="Negritta">Subsistema financiero</strong>. Encargado de la gestión de los bienes
+            económicos de la empresa
+        </li>
+        <li class="punto"><strong class="Negritta">Subsistema directivo</strong>. Encargado de la gestión organizativa
+            de la empresa
+        </li>
+    </ul>
+    <p class="Normal">Hay que hacer notar que cada subsistema se asocia a un departamento concreto de la empresa. </p>
+    <h4 class="titulo"><span class="numeroOculto">2</span>Sistemas de Información</h4>
+    <p class="Normal2">Los sistemas que aglutinan los elementos que intervienen para gestionar la información que
+        manejan los subsistemas empresariales es lo que se conoce como Sistemas de Información. Se suele utilizar las
+        siglas <strong class="Negritta">SI</strong> o <strong class="Negritta">IS</strong> (de <em class="cursiva">Information
+            Server</em>) para referirse a este concepto.</p>
+    <p class="Normal">Vale también para gestionar la información de cualquier sistema, aunque no sea empresarial. Pero
+        la teoría está basada en el sistema empresarial.</p>
+    <p class="Normal">Realmente un sistema de información sólo incluye aquello que nos interesa de la empresa y los
+        elementos necesarios para gestionar esa información.</p>
+    <p class="Normal">Un sistema de información genérico está formado por los siguientes elementos:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Recursos físicos.</strong> Carpetas, documentos, equipamiento,
+            discos,...
+        </li>
+        <li class="punto"><strong class="Negritta">Recursos humanos.</strong> Personal que maneja la información</li>
+        <li class="punto"><strong class="Negritta">Protocolo.</strong> Normas que debe cumplir la información para que
+            sea manejada (formato de la información, modelo para los documentos,...)
+        </li>
+    </ul>
+    <p class="Normal2">Las empresas necesitan implantar estos sistemas de información debido a la competencia que las
+        obliga a gestionar de la forma más eficiente sus datos para una mayor calidad en la organización de las
+        actividades de los subsistemas empresariales.</p>
+    <h4 class="titulo"><span class="numeroOculto">3</span>componentes de un Sistema de Información Electrónico</h4>
+    <p class="Normal2">En el caso de una <strong class="Negritta">gestión electrónica de la información</strong> (lo que
+        actualmente se considera un <strong class="Negritta">sistema de información electrónico</strong>), los
+        componentes son:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Datos.</strong> Se trata de la información relevante que almacena y
+            gestiona el sistema de información. Ejemplos de datos son: <em class="cursiva">Sánchez</em>, <em class="cursiva">12764569F</em>, <em class="cursiva">Calle Mayo 5</em>, <em class="cursiva">Azul</em>…
+        </li>
+        <li class="punto"><strong class="Negritta">Hardware.</strong> Equipamiento físico que se utiliza para gestionar
+            los datos. cada uno de los dispositivos electrónicos que permiten el funcionamiento del sistema de
+            información: servidores, máquinas de los clientes, routers, switches, impresoras,…
+        </li>
+        <li class="punto"><strong class="Negritta">Software.</strong> Aplicaciones informáticas que se encargan de la
+            gestión de la base de datos y de las herramientas que facilitan su uso.
+        </li>
+        <li class="punto"><strong class="Negritta">Recursos humanos. </strong>Personal que maneja el sistema de
+            información.</li>
+    </ul>
+    <h2 class="titulo2" id="h22"><span class="numero2">[1.2] </span><a id="_idTextAnchor004"></a>tipos de
+        gestión de información mediante el ordenador</h2>
+    <p class="Normal2">En la evolución de los sistemas de información ha habido dos puntos determinantes, que han
+        formado los dos tipos fundamentales de sistemas de información electrónico.</p>
+    <h3 class="titulo3"><span class="numero3">[1.2.1]</span><a id="_idTextAnchor005"></a>sistemas de gestión de ficheros
+    </h3>
+    <p class="Normal2">Este tipo de sistemas hace referencia a la forma que inicialmente se desarrolló en la informática
+        para gestionar ficheros (y que aún se usa). En realidad, es una forma que traducía la manera clásica de
+        gestionar sistemas de información (con sus archivadores, carpetas,…) al mundo electrónico.</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/1.png" alt=""></p>
+    <p class="Normal">La idea es que los datos se almacenan en ficheros y se crean aplicaciones (cuyo código posee la
+        empresa que crea dichas aplicaciones) para acceder a los ficheros. Cada aplicación organiza los datos en los
+        ficheros como le parece mejor y si incorporamos aplicaciones nuevas, estas usarán sus propios ficheros.</p>
+    <p class="Normal2">Cada aplicación almacena y utiliza sus propios datos de forma un tanto caótica. La ventaja de
+        este sistema (la única ventaja), es que los procesos son independientes por lo que la modificación de uno no
+        afecta al resto. Pero tiene grandes inconvenientes:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Programación de aplicaciones compleja. </strong>Ya que los
+            programadores se deben de encargar de lo que tiene que hacer la aplicación y además de estructurar los datos
+            en disco.
+        </li>
+        <li class="punto"><strong class="Negritta">Datos redundantes.</strong> Ya que se repiten continuamente. Podría,
+            por ejemplo, ocurrir que una segunda aplicación utilice datos de personales, que resulta que ya estaban
+            almacenados en los ficheros de una primera aplicación, pero como ambas son independientes, los datos se
+            repetirán.
+        </li>
+        <li class="punto"><strong class="Negritta">Datos inconsistentes. </strong>En relación con el problema anterior,
+            ya<strong class="Negritta"> </strong>que un proceso cambia sus datos y no los del resto. Por lo que la misma
+            información puede tener distintos valores según qué aplicación acceda a él.
+        </li>
+        <li class="punto"><strong class="Negritta">Difícil acceso a los datos.</strong> Cada vez que se requiera una
+            consulta no prevista inicialmente, hay que modificar el código de las aplicaciones o incluso crear una nueva
+            aplicación. Esto hace imposible pensar en nuevas consultas e instantáneamente obtener sus resultados;
+            inviable para aplicaciones que requieren grandes capacidades de consultas y análisis de datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Coste de almacenamiento elevado. </strong>Al almacenarse varias veces
+            el mismo dato, se requiere más espacio en los discos. Además, las aplicaciones también ocupan mucho al tener
+            que pensar en todas las posibles consultas sobre los datos que la organización precisa.
+        </li>
+        <li class="punto"><strong class="Negritta">Dependencia de los datos a nivel físico.</strong> Para poder saber
+            cómo se almacenan los datos, es decir qué estructura se utiliza de los mismos, necesitamos ver el código de
+            la aplicación; es decir el código y los datos no son independientes.
+        </li>
+        <li class="punto"><strong class="Negritta">Dificultad para el acceso simultáneo a los datos. </strong>El acceso
+            simultáneo requiere que varios usuarios al puedan acceder a la misma información. Con este tipo de sistemas
+            es extremadamente difícil conseguir esta capacidad.
+        </li>
+        <li class="punto"><strong class="Negritta">Dificultad para administrar la seguridad del sistema.</strong> Ya que
+            cada aplicación se crea independientemente. Es, por tanto, muy difícil establecer criterios de seguridad
+            uniformes. Es decir, los permisos que cada usuario tiene sobre los datos, se establecen de forma muy confusa
+            (y nada uniforme ya que cada aplicación puede variar la seguridad).
+        </li>
+    </ul>
+    <p class="Normal2">Se consideran también sistemas de gestión de ficheros, a los sistemas que utilizan programas
+        ofimáticos (como <strong class="Negritta">Word</strong> o <strong class="Negritta">Excel </strong>por ejemplo)
+        para gestionar sus datos. Esta última idea, la utilizan muchas pequeñas empresas para gestionar los datos,
+        debido al presupuesto limitado del que disponen. Gestionar la información de esta forma produce los mismos (si
+        no más) problemas.</p>
+    <h3 class="titulo3"><span class="numero3">[1.2.2]</span><a id="_idTextAnchor006"></a>Sistemas de Bases de Datos</h3>
+    <p class="Normal2">Estos serán los sistemas que estudiaremos en estos apuntes. </p>
+    <p class="Normal2">En este tipo de sistemas, los datos se centralizan en una <strong class="Negritta">base de
+            datos</strong> común a todas las aplicaciones. Un software llamado <strong class="Negritta">Sistema Gestor
+            de Bases de Datos (SGBD) </strong>es el que realmente accede a los datos y se encarga de gestionarlos. Las
+        aplicaciones que creen los programadores, no acceden directamente a los datos, de modo que la base de datos es
+        común para todas las aplicaciones.</p>
+    <p class="Normal">De esta forma, hay, al menos, dos capas a la hora de acceder a los datos. Las aplicaciones se
+        abstraen sobre la forma de acceder a los datos, dejando ese problema al SGBD. Así se pueden concentrar
+        exclusivamente en la tarea de conseguir una interfaz de acceso a los datos para los usuarios.</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/2.png" alt=""></p>
+    <p class="Normal">Cuando una aplicación modifica un dato, la modificación será visible inmediatamente para el resto
+        de aplicaciones; ya que todas utilizarán la misma base de datos. </p>
+    <h4 class="titulo"><span class="numeroOculto">4</span>ventajas</h4>
+    <ul>
+        <li class="punto"><strong class="Negritta">Independencia de los datos y los programas.</strong> Esto permite
+            modificar los datos sin modificar el código de las aplicaciones y viceversa.
+        </li>
+        <li class="punto"><strong class="Negritta">Menor redundancia</strong>. Este modelo no requiere que los datos se
+            repitan para cada aplicación que los requiera., en su lugar se diseñan los datos de forma independiente a
+            las aplicaciones. Los programadores de aplicaciones deberán conocer la estructura creada para los datos y la
+            forma en la que deben acceder a ellos.
+        </li>
+        <li class="punto"><strong class="Negritta">Integridad de los datos</strong>. Al estar centralizados, es más
+            difícil que haya datos incoherentes. Es decir, que una aplicación muestre información distinta al resto de
+            aplicaciones, ya que los datos son los mismos para todas.
+        </li>
+        <li class="punto"><strong class="Negritta">Mayor seguridad en los datos. </strong>El SGBD es el encargado de la
+            seguridad y se puede centrar en ella de forma independiente a las aplicaciones. Como las aplicaciones deben
+            atravesar la capa del SGBD para llegar a los datos, no se podrán saltar la seguridad.
+        </li>
+        <li class="punto"><strong class="Negritta">Visiones distintas según el usuario.</strong> Nuevamente, centralizar
+            los datos facilita crear políticas que permitan que los usuarios vean la información de la base de datos de
+            forma distinta.
+        </li>
+        <li class="punto"><strong class="Negritta">Datos más documentados.</strong> Las bases de datos tienen mucho
+            mejor gestionados los <strong class="Negritta">metadatos, </strong>que permiten describir la información de
+            la base de datos y que pueden ser consultados por las aplicaciones.
+        </li>
+        <li class="punto"><strong class="Negritta">Acceso a los datos más eficiente.</strong> Esta forma de organizar
+            los datos produce un resultado más óptimo en rendimiento ya que los sistemas gestores centralizan el acceso
+            pudiendo ejecutar políticas diferentes en función de la demanda.
+        </li>
+        <li class="punto"><strong class="Negritta">Menor espacio de almacenamiento. </strong>Puesto que hay muy poca
+            redundancia.
+        </li>
+        <li class="punto"><strong class="Negritta">Acceso simultáneo a los datos.</strong> Nuevamente el SGBD tiene más
+            capacidad de conseguir esto. Cuando hay varias aplicaciones que intentan acceder a los datos en los sistemas
+            orientados a los ficheros, compiten por los datos y es fácil el bloqueo mutuo. En el caso de los sistemas
+            orientados a bases de datos, toda petición pasa la capa del SGBD y esto permite evitar los bloqueos.
+        </li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">5</span>desventajas</h4>
+    <ul>
+        <li class="punto"><strong class="Negritta">Instalación costosa.</strong> El control y administración de bases de
+            datos requiere de un software y hardware poderoso.
+        </li>
+        <li class="punto"><strong class="Negritta">Requiere personal cualificado. </strong>Debido a la dificultad de
+            manejo de este tipo de sistemas.
+        </li>
+        <li class="punto"><strong class="Negritta">Implantación larga y difícil. </strong>En relación a los puntos
+            anteriores. La adaptación del personal y del equipamiento es mucho más complicada y lleva bastante tiempo.
+        </li>
+        <li class="punto"><strong class="Negritta">Ausencia de estándares totales. </strong>Lo cual significa una
+            excesiva dependencia hacia los sistemas comerciales del mercado. Aunque, hoy en día, hay un funcionamiento
+            base y un lenguaje de gestión (<strong class="Negritta">SQL</strong>) que desde hace tiempo se considera
+            estándar (al menos en las bases de datos relacionales).</li>
+    </ul>
+    <h2 class="titulo2" id="h23"><span class="numero2">[1.3] </span><a id="_idTextAnchor007"></a>funcionamiento de un Sistema Gestor de
+        Bases de Datos</h2>
+    <h3 class="titulo3"><span class="numero3">[1.3.1]</span><a id="_idTextAnchor008"></a>funciones. lenguajes de
+        los SGBD</h3>
+    <p class="Normal2">Los SGBD tienen que realizar tres tipos de funciones para ser considerados válidos. A
+        continuación se describen estas tres funciones.</p>
+    <h4 class="titulo"><span class="numeroOculto">6</span>función de descripción o definición</h4>
+    <p class="Normal2">Permite al diseñador de la base de datos crear las estructuras apropiadas para integrar
+        adecuadamente los datos. Se dice que esta función es la que permite definir las tres estructuras de la base de
+        datos (relacionadas con los tres niveles de abstracción de las mismas). </p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Estructura interna </strong></li>
+        <li class="punto"><strong class="Negritta">Estructura conceptual </strong></li>
+        <li class="punto"><strong class="Negritta">Estructura externa</strong></li>
+    </ul>
+    <p class="Normal2">Más adelante se explican estas tres estructuras, relacionadas con las tres formas (o niveles) de
+        ver la base de datos.</p>
+    <p class="Normal">Realmente la función de definición lo que hace es gestionar los <strong class="Negritta">metadatos</strong>. Los metadatos son la estructura de la dispone el sistema de base de
+        datos para documentar cada dato. Los metadatos también son datos que se almacenan en la propia base de datos;
+        pero su finalidad es describir los datos. </p>
+    <p class="Normal">Un metadato nos permite para saber a qué información real se refiere cada dato. Por ejemplo: <em class="cursiva">Sánchez</em>, <em class="cursiva">Rodríguez</em> y <em class="cursiva">Crespo</em> son
+        datos. Pero <em class="cursiva">Primer Apellido</em> es un metadato que, si está correctamente creado, nos
+        permite determinar que <em class="cursiva">Sánchez</em>, <em class="cursiva">Rodríguez</em> y <em class="cursiva">Crespo</em> son primeros apellidos.</p>
+    <p class="Normal">Dicho de otra forma, sin los metadatos, no podríamos manejar los datos como información relevante.
+        Por ello son fundamentales. Son, de hecho, la base de la creación de las bases de datos.</p>
+    <p class="Normal">Los metadatos pueden indicar cuestiones complejas. Por ejemplo, que de los <em class="cursiva">Alumnos</em>
+        almacenamos su <em class="cursiva">dni</em> el cual lo forman 9 caracteres. Incluso podremos indicar que en el
+        <em class="cursiva">dni </em>los 8 primeros son números y el noveno un carácter en mayúsculas que además cumple
+        una regla concreta y sirve para identificar al alumno.</p>
+    <p class="Normal">Por lo tanto, en realidad, <strong class="Negritta">la función de definición sirve para crear,
+            eliminar o modificar metadatos</strong>. </p>
+    <p class="Normal">Resumiendo: con la función de definición podremos:</p>
+    <ul>
+        <li class="punto">Especificar el significado de los datos</li>
+        <li class="punto">Organizar la información en estructuras más complejas</li>
+        <li class="punto">Relacionar los datos de forma precisa</li>
+        <li class="punto">Especificar reglas especiales que deben cumplir los datos</li>
+        <li class="punto">Crear todos los elementos estructurales de la base de datos (incluidos los usuarios)</li>
+    </ul>
+    <p class="Normal">Un lenguaje conocido como <strong class="Negritta">lenguaje de descripción de datos</strong> o
+        <strong class="Negritta">DDL</strong>, es el que permite realizar la función de definición en las bases de
+        datos.</p>
+    <h4 class="titulo"><span class="numeroOculto">7</span>función de manipulación</h4>
+    <p class="Normal2">Permite cambiar y consultar los <strong class="Negritta">datos</strong> de la base de datos. Se
+        realiza mediante un <strong class="Negritta">lenguaje de modificación de datos</strong> o <strong class="Negritta">DML.</strong> Mediante este lenguaje se puede:</p>
+    <ul>
+        <li class="punto">Añadir<strong class="Negritta"> </strong>datos</li>
+        <li class="punto">Eliminar<strong class="Negritta"> </strong>datos</li>
+        <li class="punto">Modificar<strong class="Negritta"> </strong>datos</li>
+        <li class="punto">Consultar datos</li>
+    </ul>
+    <p class="Normal2">Actualmente se suele diferenciar la <strong class="Negritta">función de consulta de
+            datos</strong>, diferenciándola del resto de operaciones de manipulación de datos. Se habla de que la
+        función de consulta se realiza con un <strong class="Negritta">lenguaje de consulta de datos</strong> o <strong class="Negritta">DQL </strong>(<em class="cursiva">Data Query Language</em>)<strong class="Negritta">.</strong></p>
+    <h4 class="titulo"><span class="numeroOculto">8</span>función de control</h4>
+    <p class="Normal2">Mediante esta función los administradores poseen mecanismos para proteger los datos. De manera
+        que se permite a cada usuario ver ciertos datos y otros no, o bien usar ciertos recursos concretos de la base de
+        datos y prohibir otros. Es decir, es la función encargada de establecer los permisos de acceso a los elementos
+        que forman parte de la base de datos.</p>
+    <p class="Normal">El lenguaje que implementa esta función es el <strong class="Negritta">lenguaje de control de
+            datos </strong>o <strong class="Negritta">DCL.</strong></p>
+    <h3 class="titulo3"><span class="numero3">[1.3.2]</span><a id="_idTextAnchor009"></a>utilidad de los sistemas
+        gestores de bases de datos</h3>
+    <p class="Normal2">Un sistema gestor de bases de datos o <strong class="Negritta">SGBD</strong> (aunque se suele
+        utilizar más a menudo en los libros especializados las siglas <strong class="Negritta">DBMS </strong>procedentes
+        del inglés, <em class="cursiva">Data Base Management System</em>) es el software que permite a los usuarios
+        procesar, describir, administrar y recuperar los datos almacenados en una base de datos.</p>
+    <p class="Normal">En estos sistemas se proporciona un conjunto coordinado de programas, procedimientos y lenguajes
+        que permiten a los distintos usuarios realizar sus tareas habituales con los datos, garantizando además la
+        seguridad de los mismos.</p>
+    <p class="Normal">El éxito del SGBD reside en mantener la seguridad e integridad de los datos. Lógicamente tiene que
+        proporcionar herramientas a los distintos usuarios. </p>
+    <p class="Normal">Además de las tres funciones principales comentadas anteriormente, hoy en día los SGBD son capaces
+        de realizar numerosas operaciones. Para ello proporcionan numerosas herramientas, muchas de ellas permiten
+        trabajar de una forma más cómoda con los <strong class="Negritta">SGBD/DBMS</strong>. Las más destacadas son:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Herramientas para la creación y especificación del diccionario de
+                datos</strong>. El diccionario de datos es la estructura de la base de datos que almacena los metadatos.
+            Es decir el diccionario de datos contiene la descripción de todos los datos de la base de datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas para administrar y crear la estructura física de la base
+                de datos</strong>. El SGBD proporciona herramientas para especificar la forma en la que se almacenarán
+            los datos en la computadora (o computadoras) que alojen la base de datos. Estas herramientas nos permitirán
+            diseñar una forma de almacenamiento centrada en optimizar el acceso a los datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas para la manipulación de los datos. </strong>Nos
+            permitirán añadir, modificar, suprimir o consultar datos (función de manipulación) de la forma más sencilla
+            posible.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas de recuperación</strong> en caso de desastre. Si ocurre
+            un mal funcionamiento del sistema, un fallo en la alimentación del sistema, errores de red, etc. En ese caso
+            los buenos SGBD poseen y proporcionan mecanismos para que se recupere la máxima información posible y se
+            asegure su integridad.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas para la creación y restablecimiento de copias de
+                seguridad. </strong>Es una de las tareas fundamentales, ya que permite recuperar la información en caso
+            de pérdida de datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas para la gestión de la comunicación</strong> de la base
+            de datos. Encargadas de configurar el hardware y software de conexión a la red. Así como los mecanismos
+            necesarios para configurar adecuadamente el software que se encarga de recibir y comunicar las peticiones de
+            los clientes.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas para la creación de aplicaciones de usuario</strong>. Es
+            decir, herramientas para los programadores de aplicaciones, los cuales crean el software con el que los
+            usuarios accederán de forma cómoda a la base de datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas de instalación y configuración</strong> de la base de
+            datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas para la exportación e importación</strong> de datos a o
+            desde otros sistemas.
+        </li>
+        <li class="punto"><strong class="Negritta">Herramientas para gestionar la seguridad</strong>. Permiten
+            establecer privilegios y permisos diferentes para los usuarios, así como impedir el acceso no deseado
+            (función de control).</li>
+    </ul>
+    <h3 class="titulo3"><span class="numero3">[1.3.3]</span><a id="_idTextAnchor010"></a>niveles
+        de abstracción de una base de datos</h3>
+    <h4 class="titulo"><span class="numeroOculto">9</span>introducción</h4>
+    <p class="Normal2">En cualquier software siempre hay dos puntos de vista:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Nivel externo</strong>. Esta es la visión del software que tienen los
+            usuarios
+        </li>
+        <li class="punto"><strong class="Negritta">Nivel interno</strong>. Visión de los creadores del software, que
+            determina su forma de funcionar.
+        </li>
+    </ul>
+    <p class="Normal2">Esta separación distingue al usuario o usuaria, del programador o programadora que ha creado la
+        aplicación, y es crucial que sea así. La persona que utiliza el software evita tener que Del mismo modo una casa
+        se la puede observar desde el punto de vista del inquilino de la misma o bien de las personas que la
+        construyeron. Los primeros ven la función real de la misma y los constructores nos podrán hablar de los
+        materiales empleados por ejemplo.</p>
+    <p class="Normal">En el caso de las bases de datos hay más niveles, más formas de observar la base de datos y estos
+        niveles son manejados por los distintos usuarios de la base de datos. A eso se le llama los niveles de
+        abstracción porque nos permite efectivamente abstraernos para observar la base de datos en base a diferentes
+        intereses. Los usuarios podrán entender la base de datos sin conocer los entresijos técnicos y los
+        administradores podrán trabajar con base de datos sin conocer la forma en la que los usuarios realmente añaden
+        los datos. </p>
+    <p class="Normal">Los niveles habituales son:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Nivel físico</strong>. Nos permite saber la forma en la que está
+            almacenada la base de datos. Por ejemplo en qué discos duros, qué archivos utiliza, de qué tipo son los
+            archivos, bajo qué sistema operativo,… Este nivel es el que está más cercano a la visión de la base de datos
+            que posee la computadora, por lo que es absolutamente dependiente del hardware y el software (especialmente
+            del Sistema Operativo).
+        </li>
+        <li class="punto"><strong class="Negritta">Nivel interno</strong>. Un poco más cercano a la visión que tenemos
+            las personas. Permite observar la base de datos como un conjunto de estructuras que relacionan la
+            información humana con la información digital. A este nivel no se depende del hardware concreto que
+            tengamos; es decir, no se habla de discos, servidores, archivos,… sino de las estructuras que disponemos en
+            nuestro SGBD en particular para organizar los datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Nivel conceptual</strong>. Es el nivel de mayor abstracción y el más
+            importante. Se trata de una visión organizativa de los datos independiente tanto del hardware como del
+            software que tengamos. Es el plano o modelo general de la base de datos y a este nivel es al que trabajan
+            las o los analistas y diseñadores cuando crean el primer esquema de la base de datos. En ningún momento
+            queda influido por el SGBD en particular que usemos.
+        </li>
+        <li class="punto"><strong class="Negritta">Nivel externo</strong>. Se trata de la visión de los datos que poseen
+            los usuarios y usuarias<strong class="Negritta"> </strong>finales de la base de datos<strong class="Negritta">.</strong> Esa visión es la que obtienen a través de las aplicaciones. Las aplicaciones
+            creadas por los desarrolladores abstraen la realidad conceptual de modo que el usuario no conoce las
+            relaciones entre los datos, como tampoco conoce dónde realmente se están almacenando los datos. Es la forma
+            en la que cualquier persona desea manejar una base de datos a través de formularios, informes, listas,…
+        </li>
+    </ul>
+    <p class="Normal2">La idea de estos niveles procede de la normalización hecha en el modelo <strong class="Negritta">ANSI/X3/SPARC</strong>
+        (Véase [a2] estándares y modelo ANSI en la página 46) y sigue estando
+        muy presente en la gestión actual de las bases de datos.</p>
+    <p class="Normal">Este modelo dictó que podemos pasar de unos modelos a otros de manera casi automática utilizando
+        un software adecuado. El modelo ANSI llama a ese software <strong class="Negritta">procesador de
+            modelos</strong> y hoy en día es lo que se conoce como <strong class="Negritta">herramientas CASE (</strong><strong class="Negritta" lang="en-US">Computer Aided for Software Engineering, </strong><em class="cursiva" lang="en-US">Asistente
+            Computerizado para Ingeniería del Software</em><span lang="en-US">). Para cada nivel se realizan esquemas relacionados con ellos. Así hay </span><strong class="Negritta" lang="en-US">esquemas externos</strong><span lang="en-US"> (varios), </span><strong class="Negritta" lang="en-US">esquema conceptual</strong><span lang="en-US">, </span><strong class="Negritta" lang="en-US">esquema interno</strong><span lang="en-US"> y </span><strong class="Negritta" lang="en-US">esquema
+            físico</strong><span lang="en-US"> que forman todos los aspectos de la base de datos.</span></p>
+    <p class="Normal"><span lang="en-US"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/3.png" alt=""></span></p>
+    <p class="caption">En la <a href="https://jorgesanchez.net/manuales/gbd/sgbd.html">Ilustración 3</a> se observa la distancia que poseen los usuarios de la base de
+        datos respecto a la realidad física de la base de datos (representada con el cilindro). La física son los datos
+        en crudo, es decir en formato binario dentro del disco o discos que los contienen. El esquema físico es el que
+        se realiza pensando más en esa realidad y los esquemas externos los que se crean pensando en la visión de los
+        usuarios.</p>
+    <p class="Normal">Las dos columnas que aparecen en la imagen reflejan dos fronteras a tener en cuenta:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Independencia Lógica</strong>. Los esquemas de los niveles conceptual
+            y externo son independientes del software concreto de base de datos que usemos; no dependen en absoluto de
+            él. Por ello esos esquemas nos valdrían para cualquier SGBD que utilicemos.
+        </li>
+        <li class="punto"><strong class="Negritta">Independencia Física</strong>. La da la barrera entre el esquema
+            físico y el interno e indica que el esquema interno es independiente del hardware concreto que usemos. El
+            esquema físico se diseña en base a un hardware concreto, pero él interno no. Eso permite concentrarse en
+            detalles más conceptuales.</li>
+    </ul>
+    <h3 class="titulo3"><span class="numero3">[1.3.4]</span><a id="_idTextAnchor011"></a>recursos humanos de las bases de datos</h3>
+    <p class="Normal2">Intervienen (como ya se ha comentado) muchas personas en el desarrollo y manipulación de una base
+        de datos. Se describen, a continuación, los actores más importantes.</p>
+    <h4 class="titulo"><span class="numeroOculto">10</span>informáticos</h4>
+    <p class="Normal2">Lógicamente, son los profesionales que definen y preparan la base de datos. Pueden ser:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Directivos/as.</strong> Organizadores y coordinadores del proyecto a
+            desarrollar y máximos responsables del mismo. Esto significa que son los encargados de decidir los recursos
+            que se pueden utilizar, planificar el tiempo y las tareas, la atención al usuario y de dirigir las
+            entrevistas y reuniones pertinentes.<p class="sinpunto">Son especialistas en gestión de recursos, tanto
+                materiales como humanos.</p></li>
+        <li class="punto"><strong class="Negritta">Analistas</strong>. Son los encargados de controlar el desarrollo de
+            la base de datos aprobada por la dirección. Dirigen a los desarrolladores y operadores. Normalmente son,
+            además, los <strong class="Negritta">diseñadores de la base de datos</strong>: es decir, crean el esquema
+            conceptual de la misma.
+        </li>
+        <li class="punto"><strong class="Negritta">Administradores/as de las bases de datos.</strong> Encargados de
+            crear el esquema interno de la base de datos. También gestionan el correcto funcionamiento del SGBD. Sus
+            tareas incluyen la planificación de copia de seguridad, gestión de usuarios y permisos, optimización del
+            rendimiento, monitorización de problemas y creación de los objetos de la base de datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Desarrolladores/as o programadores/as.</strong> Encargados de la
+            realización de las aplicaciones de usuario para que estos accedan a la base de datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Equipo de mantenimiento.</strong> También se les llama <strong class="Negritta">operadores</strong>. Encargados de dar soporte a los usuarios en el trabajo diario
+            (suelen incorporar además tareas administrativas como la creación de copias de seguridad por ejemplo o el
+            arreglo de problemas de red por ejemplo).
+        </li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">11</span>usuarios</h4>
+    <ul>
+        <li class="punto"><strong class="Negritta">Expertos/as.</strong> Realizan operaciones avanzadas sobre la base de
+            datos. Normalmente conocen el lenguaje de manipulación de datos (<strong class="Negritta">DML</strong>) para
+            acceder a la base de datos. Son usuarios, por lo tanto, con conocimientos informáticos que se encargan en
+            las empresas de los clientes de algunas acciones más complejas sobre la base de datos que las que realizan
+            los usuarios habituales.
+        </li>
+        <li class="punto"><strong class="Negritta">Habituales. </strong>Utilizan las aplicaciones creadas por los
+            desarrolladores para consultar y actualizar los datos. Son los que trabajan en la empresa a diario con estas
+            herramientas y el objetivo fundamental de todo el desarrollo de la base de datos.
+        </li>
+        <li class="punto"><strong class="Negritta">Ocasionales</strong>. Son<strong class="Negritta"> </strong>usuarios
+            que utilizan un acceso mínimo a la base de datos a través de una aplicación que permite consultar ciertos
+            datos. Serían por ejemplo los usuarios que consultan el horario de trenes a través de Internet. Aunque se
+            les llama ocasionales son el núcleo del trabajo con la base de datos ya que son los que más la utilizan (ya
+            que son sus usuarios más numerosos) y son, por ejemplo, los que visitan la base de datos para realizar
+            compras o para informarse del negocio representado en la base de datos.
+        </li>
+    </ul>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/4.png" alt=""></p>
+    <h3 class="titulo3"><span class="numero3">[1.3.5]</span><a id="_idTextAnchor012"></a>proceso de creación y
+        manipulación de una base de datos </h3>
+    <h4 class="titulo"><span class="numeroOculto">12</span>fase de creación:</h4>
+    <p class="Numeros"><span class="numeroNumero">[1]</span>El <strong class="Negritta">analista</strong> o <strong class="Negritta">diseñador</strong> crea el esquema conceptual. En muchas ocasiones, utilizando una <strong class="Negritta">herramienta CASE</strong> para diseñar el esquema de forma más cómoda.</p>
+    <p class="Numeros"><span class="numeroNumero">[2]</span>El <strong class="Negritta">administrador</strong> de la
+        base de datos (<strong class="Negritta">DBA</strong>) recoge ese esquema y crea el esquema interno de la base de
+        datos. También se encarga, previamente, de determinar el SGBD idóneo y de configurar el software del SGBD así
+        como de establecer las políticas de copia de seguridad.</p>
+    <p class="Numeros"><span class="numeroNumero">[3]</span>Los <strong class="Negritta">desarrolladores</strong>
+        también recogen el esquema conceptual y utilizan las aplicaciones necesarias para generar los esquemas externos,
+        que realmente se traducirán en programas y aplicaciones, que necesitan los usuarios.</p>
+    <h4 class="titulo"><span class="numeroOculto">13</span>fase de manipulación:</h4>
+    <p class="Normal2">Ocurre con la base de datos ya creada y en funcionamiento.</p>
+    <p class="Numeros"><span class="numeroNumero">[1]</span>El usuario realiza una operación sobre la base de datos (una
+        consulta, modifica o añade un dato, etc.)</p>
+    <p class="Numeros"><span class="numeroNumero">[2]</span>Las aplicaciones las traducen a su forma conceptual
+        utilizando el diccionario de datos, que posee todos los metadatos necesarios.</p>
+    <p class="Numeros"><span class="numeroNumero">[3]</span>El esquema conceptual es traducido por la SGBD a su forma
+        interna, nuevamente con ayuda del Diccionario de Datos.</p>
+    <p class="Numeros"><span class="numeroNumero">[4]</span>EL SGBD se comunica con el Sistema Operativo para pedir que
+        acceda al disco (estamos, por lo tanto ya en el nivel físico) y recoja los datos requeridos (siempre con ayuda
+        del Diccionario de Datos).</p>
+    <p class="Numeros"><span class="numeroNumero">[5]</span>El Sistema Operativo accede al almacenamiento físico
+        correspondiente y devuelve los datos al SGBD.</p>
+    <p class="Numeros"><span class="numeroNumero">[6]</span>El SGBD transforma los datos internos en datos conceptuales
+        y los entrega a la aplicación.</p>
+    <p class="Numeros"><span class="numeroNumero">[7]</span>La aplicación muestra los datos habiéndolos traducido a una
+        forma (externa) amigable y apta para ser entregada al usuario que hizo la petición.</p>
+    <h3 class="titulo3"><span class="numero3">[1.3.6]</span><a id="_idTextAnchor013"></a>estructura multicapa</h3>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/5.png" alt=""></p>
+    <p class="Normal2">El proceso que realiza un SGBD para acceder a los datos está en realidad formado por varias capas
+        que actúan como interface. El usuario nunca accede a los datos directamente. Estas capas son las que consiguen
+        implementar los niveles de abstracción de la base de datos. </p>
+    <p class="Normal2">Fue el propio organismo ANSI (en su modelo ANSI/X3/SPARC) la que introdujo una mejora de su
+        modelo de bases de datos en 1988 a través de un grupo de trabajo llamado <strong class="Negritta">UFTG</strong>
+        (<em class="cursiva">User Facilities Task Group,</em> grupo de trabajo para las facilidades de usuario). Este
+        modelo toma como objeto principal al usuario habitual de la base de datos y modela el funcionamiento de la base
+        de datos en una sucesión de capas cuya finalidad es ocultar y proteger la parte interna de las bases de datos.
+    </p>
+    <p class="Normal">Desde esta óptica, para llegar a los datos hay que pasar una serie de capas que desde la parte más
+        externa poco a poco van entrando más en la realidad física de la base de datos. Esa estructura se muestra en la
+        <a href="https://jorgesanchez.net/manuales/gbd/sgbd.html">Ilustración 5</a>.</p>
+    <p class="Normal">Este marco sigue teniendo vigencia actualmente e indica que el acceso a los datos no es
+        instantáneo, que los datos están protegidos de los usuarios que pasan (sin saberlo) por varias capas de proceso
+        antes de que sus peticiones a la base de datos sean atendidas.</p>
+    <p class="Normal">Se explican las capas en detalle</p>
+    <h4 class="titulo"><span class="numeroOculto">14</span>aplicaciones de usuario</h4>
+    <p class="Normal2">Es la capa a la que acceden los usuarios. Proporciona el SGBD a los usuarios un acceso más
+        sencillo a los datos. Son, en definitiva, las páginas web y los programas con las que los usuarios manejan la
+        base de datos. Permite abstraer la realidad de la base de datos a las usuarias y usuarios, mostrando la
+        información de una forma más humana.</p>
+    <h4 class="titulo"><span class="numeroOculto">15</span>capa de acceso a datos</h4>
+    <p class="Normal2">La capa de acceso a datos es la que permite comunicar a las aplicaciones de usuario con el
+        diccionario de datos. Es un software (un <em class="cursiva">driver</em> o controlador, en realidad) que se
+        encarga traducir las peticiones del usuario para que lleguen de forma correcta a la base de datos y ésta pueda
+        responder de forma adecuada.</p>
+    <h4 class="titulo"><span class="numeroOculto">16</span>diccionario de datos</h4>
+    <p class="Normal2">Se trata de una estructura interna del SGBD que contiene todos los metadatos. Esta estructura es
+        la que permite pasar de un nivel a otro.</p>
+    <p class="Normal2">núcleo</p>
+    <p class="Normal2">El núcleo de la base de datos es la capa encargada de traducir todas las instrucciones requeridas
+        y prepararlas para su correcta interpretación por parte del sistema. Realiza la traducción física de las
+        peticiones.</p>
+    <h4 class="titulo"><span class="numeroOculto">17</span>sistema operativo</h4>
+    <p class="Normal2">Es una capa externa al software SGBD pero es la única capa que realmente accede a los datos en
+        sí. En realidad los SGBD no acceden directamente al disco, sino que piden al Sistema Operativo que lo haga, ya
+        que es el que maneja el sistema de discos.</p>
+    <h3 class="titulo3"><span class="numero3">[1.3.7]</span><a id="_idTextAnchor014"></a>funcionamiento del SGBD</h3>
+    <p class="Normal">La <a href="https://jorgesanchez.net/manuales/gbd/sgbd.html">Ilustración 6</a> presenta el funcionamiento típico de un SGBD. En ella se reproduce
+        la comunicación entre un usuario que desea acceder a los datos y el SGBD:</p>
+    <p class="Numeros"><span class="numeroNumero">[1]</span>Los usuarios utilizan una aplicación para acceder a los
+        datos. Estamos en el nivel externo de la base de datos, por lo que la propia aplicación traduce la petición que
+        hizo el usuario de forma sencilla, a una petición entendible por la capa de acceso a los datos.</p>
+    <p class="Numeros"><span class="numeroNumero">[2]</span>El proceso cliente es el software de acceso a la base de
+        datos y que está instalado en el lado del cliente. Se encarga simplemente de recoger y enviar la petición
+        (comprobando antes si hay comunicación con el servidor de la base de datos).</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/6.png" alt=""></p>
+    <p class="Numeros"><span class="numeroNumero">[3]</span>A través de la red (normalmente) el proceso cliente se
+        comunica con el proceso servidor, que es el software de comunicación instalado en el lado del servidor. Ambos
+        procesos (cliente y servidor) forman la capa de acceso a los datos.</p>
+    <p class="Numeros"><span class="numeroNumero">[4]</span>Estando ya en el servidor, la petición pasa al software del
+        Sistema Gestor de Bases de Datos (habrá aquí, como se ha visto en el apartado anterior una traducción de datos,
+        desde el nivel externo al nivel interno).</p>
+    <p class="Numeros"><span class="numeroNumero">[5]</span>El SGBD, comprobando el diccionario de datos, comprueba si
+        la petición es correcta.</p>
+    <p class="Numeros"><span class="numeroNumero">[6]</span>El SGBD también revisa el diccionario de datos (si la
+        petición es correcta) para saber con exactitud en qué archivos y en qué parte dentro de ellos, se encuentran los
+        datos requeridos</p>
+    <p class="Numeros"><span class="numeroNumero">[7]</span>Con la información sobre dónde están los datos, el SGBD hace
+        una petición al Sistema Operativo, que es el que tiene capacidad realmente de acceder a los archivos de datos.
+        Por ello la petición del SGBD se traduce al formato utilizado por el Sistema Operativo.El Sistema Operativo
+        accede a los datos.</p>
+    <p class="Numeros"><span class="numeroNumero">[8]</span>El Sistema Operativo recibe los datos.</p>
+    <p class="Numeros"><span class="numeroNumero">[9]</span>Se entregan los datos al Sistema Gestor de Bases de Datos o,
+        si ha habido un error al acceder a los datos, se indica el error ocurrido.</p>
+    <p class="Numeros"><span class="numeroNumero">[10]</span>El SGBD traduce los datos a una forma más conceptual y se
+        los entrega al proceso servidor.</p>
+    <p class="Numeros"><span class="numeroNumero">[11]</span>Los datos se entregan al proceso cliente.</p>
+    <p class="Numeros"><span class="numeroNumero">[12]</span>Los datos llegan a la aplicación.</p>
+    <p class="Numeros"><span class="numeroNumero">[13]</span>La aplicación de usuario traduce los datos recibidos en
+        información presentada de la forma más conveniente para el usuario.</p>
+    <h3 class="titulo3"><span class="numero3">[1.3.8]</span><a id="_idTextAnchor015"></a>formas de ejecución de un SGBD
+    </h3>
+    <h4 class="titulo"><span class="numeroOculto">18</span>SGBD monocapa</h4>
+    <p class="Normal2">Se trata de Sistemas Gestores instalados en una máquina desde la que se conectan los propios
+        usuarios y administradores. Es decir, todo el sistema está en una sola máquina.</p>
+    <p class="normal-centrado"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/7.png" alt=""></p>
+    <p class="Normal">Es un modelo que sólo se utiliza con bases de datos pequeñas y poca cantidad de conexiones. La
+        popular <strong class="Negritta">Access</strong> de Microsoft es considerada un sistema gestor monocapa (aunque
+        tiene algunas posibilidades para utilizar en dos capas).</p>
+    <h4 class="titulo"><span class="numeroOculto">19</span>SGBD bicapa</h4>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/8.png" alt=""></p>
+    <p class="Normal2">Usa un modelo de funcionamiento tipo <strong class="Negritta">cliente/servidor</strong>. La base
+        de datos y el sistema gestor se alojan en un servidor al cual se conectan los usuarios desde máquinas clientes.
+        Un software de comunicaciones se encarga de permitir el acceso a través de la red. Los clientes deben instalar
+        el software cliente de acceso según las instrucciones de configuración del administrador.</p>
+    <p class="Normal">Hay dos posibilidades:</p>
+    <ul>
+        <li class="punto">Arquitectura <strong class="Negritta">cliente/servidor único</strong>. Un solo servidor
+            gestiona la base de datos, todos los clientes se conectan a él para realizar las peticiones a la base de
+            datos.
+        </li>
+        <li class="punto">Arquitectura <strong class="Negritta">cliente/multiservidor</strong>. La base de datos se
+            distribuye entre varios servidores. El cliente no sabe realmente a qué servidor se conecta; el software de
+            control de comunicaciones se encargará de dirigir al usuario al servidor adecuado. De forma lógica, es como
+            si se tratara de un solo servidor aunque físicamente sean muchos (el cliente no percibe que haya más de un
+            servidor).
+        </li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">20</span>SGBD de tres o más capas</h4>
+    <p class="Normal2">En este caso entre el cliente y el servidor hay al menos una capa intermedia (puede haber
+        varias). Esa capa (o capas) se encarga de recoger las peticiones de los clientes y luego de comunicarse con el
+        servidor (o servidores) de bases de datos para recibir la respuesta y enviarla al cliente.</p>
+    <p class="Normal">El caso típico es que la capa intermedia sea un servidor web, que recibe las peticiones a través
+        de aplicaciones web; de este modo para conectarse a la base de datos, el usuario solo requiere un navegador web,
+        que es un software muy habitual en cualquier máquina y por lo tanto no requiere una instalación de software
+        adicional en la máquina cliente.</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/9.png" alt=""></p>
+    <p class="Normal">Este modelo es el que más se está potenciando en la actualidad por motivos de seguridad y
+        portabilidad de la base de datos.</p>
+    <h2 class="titulo2" id="h24"><span class="numero2">[1.4] </span><a id="_idTextAnchor016"></a>tipos de SGBD</h2>
+    <h3 class="titulo3"><span class="numero3">[1.4.1]</span><a id="_idTextAnchor017"></a>introducción</h3>
+    <p class="Normal2">Como se ha visto en los apartados anteriores, resulta que cada SGBD puede utilizar un modelo
+        diferente para los datos. Por lo que hay modelos conceptuales diferentes según que SGBD utilicemos. Esto da
+        lugar a un diagrama de trabajo para los profesionales de la base de datos que permite saber qué esquemas hay que
+        realizar (y en qué orden) para crear una base de datos.</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/10.png" alt=""></p>
+    <p class="Normal">El punto de partida es el uso en el mundo real que tendrá la base de datos. Ese punto es en el que
+        están los usuarios y es crucial tenerle muy claro. El punto final es el almacenamiento físico de la base de
+        datos.</p>
+    <p class="Normal2">En este esquema aparece el llamado <strong class="Negritta">Esquema lógico</strong>, que permite
+        pasar de forma más gradual del esquema conceptual al esquema interno.</p>
+    <p class="Normal2">No obstante existen modelos lógicos comunes, ya que hay SGBD de diferentes tipos. En la realidad
+        el modelo conceptual clásico se modifica para que existan dos modelos internos: el modelo lógico (referido a
+        cualquier SGBD de ese tipo) y el modelo conceptual propiamente interno (aplicable sólo a un SGBD en particular).
+        De hecho, en la práctica, al definir las bases de datos desde el mundo real hasta llegar a los datos físicos se
+        pasa por todos los esquemas señalados en la <a href="https://jorgesanchez.net/manuales/gbd/sgbd.html">Ilustración 10</a>.</p>
+    <p class="Normal">Por lo tanto la diferencia entre los distintos SGBD está en que proporcionan diferentes modelos
+        lógicos.</p>
+    <h4 class="titulo"><span class="numeroOculto">21</span>diferencias entre el modelo lógico y el conceptual</h4>
+    <ul>
+        <li class="punto">El modelo conceptual es independiente del DBMS que se vaya a utilizar. El lógico depende de un
+            <strong class="Negritta">tipo</strong> de SGBD en particular
+        </li>
+        <li class="punto">El modelo lógico está más cerca del modelo físico, el que utiliza internamente el ordenador
+        </li>
+        <li class="punto">El modelo conceptual es el más cercano al usuario, el lógico es el encargado de establecer el
+            paso entre el modelo conceptual y el modelo físico del sistema.
+        </li>
+    </ul>
+    <p class="Normal2">Algunos ejemplos de modelos conceptuales son:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Modelo Entidad Relación</strong></li>
+        <li class="punto"><strong class="Negritta">Modelo RM/T</strong></li>
+        <li class="punto"><strong class="Negritta">Modelo UML</strong></li>
+    </ul>
+    <p class="Normal2">Ejemplos de modelos lógicos son:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Modelo relacional</strong></li>
+        <li class="punto"><strong class="Negritta">Modelo Codasyl</strong></li>
+        <li class="punto"><strong class="Negritta">Modelo Jerárquico</strong></li>
+    </ul>
+    <p class="Normal2">A continuación se comentarán los modelos lógicos más importantes.</p>
+    <h3 class="titulo3"><span class="numero3">[1.4.2]</span><a id="_idTextAnchor018"></a>modelo jerárquico</h3>
+    <p class="Normal2">Era utilizado por los primeros SGBD, desde que IBM lo definió para su IMS (<em class="cursiva">Information
+            Management System, </em>Sistema Administrador de Información) en 1970. Se le llama también modelo en árbol
+        debido a que utiliza una estructura en árbol para organizar los datos. </p>
+    <p class="Normal">La información se organiza con un jerarquía en la que la relación entre las entidades de este
+        modelo siempre es del tipo <strong class="Negritta">padre / hijo</strong>. De esta forma hay una serie de nodos
+        que contendrán atributos y que se relacionarán con nodos hijos de forma que puede haber más de un hijo para el
+        mismo padre (pero un hijo sólo tiene un padre).</p>
+    <p class="normal-centrado"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/11.png" alt=""></p>
+    <p class="Normal">Los datos de este modelo se almacenan en estructuras lógicas llamadas <strong class="Negritta">segmentos</strong>.
+        Los segmentos se relacionan entre sí utilizando <strong class="Negritta">arcos.</strong></p>
+    <p class="Normal">La forma visual de este modelo es de árbol invertido, en la parte superior están los padres y en
+        la inferior los hijos. </p>
+    <p class="Normal2">Este esquema está en absoluto desuso ya que no es válido para modelar la mayoría de problemas de
+        bases de datos. Su virtud era la facilidad de manejo ya que sólo existe un tipo de relación (padre/hijo) entre
+        los datos; su principal desventaja es que no basta para representar la mayoría de relaciones. Además no mantenía
+        la independencia con la física de la base de datos.</p>
+    <h3 class="titulo3"><span class="numero3">[1.4.3]</span><a id="_idTextAnchor019"></a>modelo en red (Codasyl)</h3>
+    <p class="Normal2">Es un modelo que ha tenido una gran aceptación (aunque apenas se utiliza actualmente). En
+        especial se hizo popular la forma definida por el estándar Codasyl a principios de los 70 que se convirtió en el
+        modelo en red más utilizado.</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/12.png" alt=""></p>
+    <p class="Normal">El modelo en red organiza la información en <strong class="Negritta">registros </strong>(también
+        llamados <strong class="Negritta">nodos</strong>) y <strong class="Negritta">enlaces</strong>. En los registros
+        se almacenan los datos, mientras que los enlaces permiten relacionar estos datos. Las bases de datos en red son
+        parecidas a las jerárquicas sólo que en ellas puede haber más de un padre. </p>
+    <p class="Normal">En este modelo se pueden representar perfectamente cualquier tipo de relación entre los datos
+        (aunque el Codasyl restringía un poco las relaciones posibles), pero hace muy complicado su manejo.</p>
+    <p class="Normal2">Poseía un lenguaje poderoso de trabajo con la base de datos. El problema era la complejidad para
+        trabajar con este modelo tanto para manipular los datos como programar aplicaciones de acceso a la base de
+        datos. Tampoco mantenía una buena independencia con la física de la base de datos.</p>
+    <h3 class="titulo3"><span class="numero3">[1.4.4]</span><a id="_idTextAnchor020"></a>modelo relacional</h3>
+    <p class="Normal2">Es el modelo más popular. Los datos se organizan en tablas y estas en columnas y filas de datos.
+        Las tablas se relacionan entre sí para ligar todos los datos. </p>
+    <p class="Normal">Se basa en la teoría de conjuntos y consigue una gran separación entre lo conceptual y lo físico,
+        consiguiendo su total independencia. Tiene un lenguaje considerado estándar, el SQL y una enorme red de usuarios
+        y documentación que facilita su aprendizaje. Además dota de una gran facilidad para establecer reglas complejas
+        a los datos.</p>
+    <p class="Normal">El problema es que la simplicidad de manejo y la independencia que consigue se logra a base de un
+        software muy complejo que requiere también un hardware poderoso.</p>
+    <h3 class="titulo3"><span class="numero3">[1.4.5]</span><a id="_idTextAnchor021"></a>modelo de bases de datos
+        orientadas a objetos</h3>
+    <p class="Normal2">Desde la aparición de la programación orientada a objetos (<strong class="Negritta">POO</strong>
+        u <strong class="Negritta">OOP</strong>) se empezó a pensar en bases de datos adaptadas a estos lenguajes. La
+        programación orientada a objetos permite cohesionar datos y procedimientos, haciendo que se diseñen estructuras
+        que poseen datos (<strong class="Negritta">atributos</strong>) en las que se definen los procedimientos (<strong class="Negritta">operaciones</strong>) que pueden realizar con los datos. En las bases orientadas a objetos
+        se utiliza esta misma idea.</p>
+    <p class="Normal">A través de este concepto se intenta que estas bases de datos consigan arreglar las limitaciones
+        de las relacionales. Por ejemplo el problema de la herencia (el hecho de que no se puedan realizar relaciones de
+        herencia entre las tablas), tipos definidos por el usuario, disparadores (triggers) almacenables en la base de
+        datos, soporte multimedia...</p>
+    <p class="Normal">Se supone que son las bases de datos de tercera generación (la primera fue las bases de datos en
+        red y la segunda las relacionales), lo que significa que el futuro parece estar a favor de estas bases de datos.
+        Pero siguen sin reemplazar a las relacionales, aunque son el tipo de base de datos que más está creciendo en los
+        últimos años.</p>
+    <p class="Normal">Su modelo conceptual se suele diseñar usando la notación <strong class="Negritta">UML</strong> y
+        el lógico usando <strong class="Negritta">ODMG</strong> (<em class="cursiva">Object Data Management Group, </em><span class="carNormal2">grupo</span> de administración de objetos de datos), organismo que intenta crear
+        estándares para este modelo.</p>
+    <p class="Normal">Sus ventajas están en el hecho de usar la misma notación que la de los programas (lo que facilita
+        la tarea de su aprendizaje a los analistas y desarrolladores) y que el significado de los datos es más completo.
+        Lo malo es que no posee un lenguaje tan poderoso como el modelo relacional para manipular datos y metadatos, que
+        tiene más dificultades para establecer reglas a los datos y que al final es más complejo para manejar los
+        datos.</p>
+    <h3 class="titulo3"><span class="numero3">[1.4.6]</span><a id="_idTextAnchor022"></a>bases de datos
+        objeto-relacionales</h3>
+    <p class="Normal2">Tratan de ser un híbrido entre el modelo relacional y el orientado a objetos. El problema de las
+        bases de datos orientadas a objetos es que requieren reinvertir capital y esfuerzos de nuevo para convertir las
+        bases de datos relacionales en bases de datos orientadas a objetos. En las bases de datos objeto relacionales se
+        intenta conseguir una compatibilidad relacional dando la posibilidad de integrar mejoras de la orientación a
+        objetos.</p>
+    <p class="Normal">Estas bases de datos se basan en el estándar <strong class="Negritta">ISO</strong> <strong class="Negritta">SQL 2000 </strong>y los siguientes. En ese estándar se añade a las bases relacionales la
+        posibilidad de almacenar procedimientos de usuario, triggers, tipos definidos por el usuario, consultas
+        recursivas, bases de datos OLAP, tipos LOB,...</p>
+    <p class="Normal">Las últimas versiones de la mayoría de las clásicas grandes bases de datos relacionales (<strong class="Negritta">Oracle</strong>, <strong class="Negritta">SQL Server</strong>, <strong class="Negritta">DB2</strong>, ...) son objeto relacionales.</p>
+    <h3 class="titulo3"><span class="numero3">[1.4.7]</span><a id="_idTextAnchor023"></a>bases de datos NoSQL</h3>
+
+    <p class="Normal2">En los últimos años ha aparecido todo un género de bases de datos (de varios tipos) que intentan
+        paliar deficiencias detectadas en el modelo relacional.</p>
+    <p class="Normal2">El dominio de este modelo parecía demostrar, durante décadas, que era el tipo ideal de base de
+        datos. El cambio de perspectiva se ha producido por la altísima demanda de servicios que requiere Internet. En
+        especial si lo que se requiere es escribir o modificar datos, ya que actualmente todos los usuarios de Internet
+        crean muchísimos datos cada día que requieren ser almacenados inmediatamente (el caso más claro es el de las
+        redes sociales).</p>
+    <p class="Normal2">Con este panorama han aparecido nuevos tipos de bases de datos y se han modificado y actualizado
+        tipos antiguos que ahora parecen útiles. Lo que aportan la mayoría de estos tipos de bases de datos, es el uso
+        de otro tipo de esquemas conceptuales e internos más apropiados para este tipo de demandas de usuario.</p>
+    <p class="Normal2">En resumen las bases de datos NoSQL renuncian al modelo relacional para paliar las carencias del
+        modelo relacional en estos aspectos:</p>
+    <ul>
+        <li class="punto">Aceptar un enorme cantidad peticiones de consulta y especialmente de modificación de datos por minuto</li>
+        <li class="punto">Gestionar datos muy heterogéneos (irregulares, con tipos de datos cambiantes)</li>
+        <li class="punto">Gestionar datos que se relacionan de manera muy compleja</li>
+        <li class="punto">Usar otros lenguajes (diferentes a SQL), más aptos para otras tareas</li>
+    </ul>
+        <p class="Normal2">Esto no significa que cada base de datos NoSQL sea capaz de mejorar en todos los aspectos anteriores, cada
+            tipo de base de datos NoSQL está pensado para algunos de los puntos anteriores.
+        </p>
+    
+
+
+    <table id="table003" class="tabla-h1 _idGenTablePara-1">
+        <colgroup>
+            <col>
+        </colgroup>
+        <tbody>
+        <tr class="tabla-h1">
+            <td class="tabla-h1 celda-h1">
+                <p class="apendicetitulo">apéndices</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h1 class="apendice" id="h25"><span class="numero2">[a1] </span><a id="_idTextAnchor024"></a>archivos</h1>
+    <h3 class="titulo3"><span class="numero3">[a1.1]</span><a id="_idTextAnchor025"></a>introducción</h3>
+    <p class="Normal2">Los ficheros o archivos son la herramienta fundamental de trabajo en una computadora todavía a
+        día de hoy. Las computadoras siguen almacenando la información en ficheros; eso sí, su estructura es cada vez
+        más compleja.</p>
+    <p class="Normal">Los datos deben de ser almacenados en componentes de almacenamiento permanente, lo que se conoce
+        como <strong class="Negritta">memoria secundaria</strong> (discos duros u otras unidades de disco). En esas
+        memorias, los datos se estructuran en archivos (también llamados ficheros). </p>
+    <p class="Normal">Un fichero es una secuencia de números binarios que organiza información relacionada a un mismo
+        aspecto.</p>
+    <p class="Normal">En general sobre los archivos se pueden realizar las siguientes operaciones:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Abrir</strong> (<em class="cursiva">open</em>). Prepara el fichero
+            para su proceso.
+        </li>
+        <li class="punto"><strong class="Negritta">Cerrar</strong> (<em class="cursiva">close</em>). Cierra el fichero
+            impidiendo su proceso inmediato.
+        </li>
+        <li class="punto"><strong class="Negritta">Leer</strong> (<em class="cursiva">read</em>). Obtiene información
+            del fichero.
+        </li>
+        <li class="punto"><strong class="Negritta">Escribir</strong> (<em class="cursiva">write</em>). Graba información
+            en el fichero.
+        </li>
+        <li class="punto"><strong class="Negritta">Posicionarse</strong> (<em class="cursiva">seek</em>). Coloca el
+            puntero de lectura en una posición concreta del mismo (no se puede realizar en todos los tipos de ficheros).
+        </li>
+        <li class="punto"><strong class="Negritta">Comprobar fin de fichero</strong> (<em class="cursiva">eof</em>).
+            Indica si hemos llegado al final del fichero.</li>
+    </ul>
+    <h3 class="titulo3"><span class="numero3">[a1.2]</span><a id="_idTextAnchor026"></a>uso de archivos para grabar datos</h3>
+    <p class="Normal2">Los archivos, como herramienta para almacenar información, tomaron la terminología del mundo de
+        la oficina empresarial. Así la palabra <strong class="Negritta">dato</strong> hace referencia a un valor sea un
+        número o un texto o cualquier otro tipo de datos almacenable. </p>
+    <p class="Normal">Cuando podemos distinguir datos referidos a una misma propiedad real a la que podemos poner un
+        nombre, hablamos de <strong class="Negritta">campos</strong>. Así: <em class="cursiva">Sánchez</em>, <em class="cursiva">Rodríguez</em>, <em class="cursiva">Serrat</em> y <em class="cursiva">Crespo</em> son datos
+        que perfectamente podrían encajar en un campo llamado <em class="cursiva">Primer Apellido</em>.</p>
+    <p class="Normal">Los datos que se refieren al mismo elemento real (una persona, una factura, un movimiento
+        bancario,…) se agrupan en <strong class="Negritta">registros</strong>. En un fichero de datos personales, cada
+        registro sería una persona; cada campo sería cada propiedad distinguible en la persona.</p>
+    <h3 class="titulo3"><span class="numero3">[a1.3]</span><a id="_idTextAnchor027"></a>tipos de archivos</h3>
+    <h4 class="titulo"><span class="numeroOculto">1</span>ficheros secuenciales</h4>
+    <p class="Normal2">En estos ficheros, los datos se organizan secuencialmente en el orden en el que fueron grabados.
+        Para leer los últimos datos hay que leer los anteriores. Es decir leer el registro número nueve, implica leer
+        previamente los ocho anteriores.</p>
+    <h5 class="titulo5"><span class="numeroOculto">1</span>ventajas</h5>
+    <ul>
+        <li class="punto">Rápidos para obtener registros contiguos de una base de datos</li>
+        <li class="punto">No hay huecos en el archivo al grabarse los datos seguidos, datos más compactos.</li>
+    </ul>
+    <h5 class="titulo5"><span class="numeroOculto">2</span>desventajas</h5>
+    <ul>
+        <li class="punto">Consultas muy lentas al tener que leer todos los registros anteriores en el orden del archivo
+            respecto al que queremos leer. Es decir, que si queremos leer el quinto registro, hay que leer los cuatro
+            anteriores.
+        </li>
+        <li class="punto">Algoritmos de lectura y escritura complejos. No es fácil hacer operaciones avanzadas con los
+            datos
+        </li>
+        <li class="punto">No se pueden eliminar registros del fichero (se pueden marcar de manera especial para que no
+            sean tenidos en cuenta, pero no se pueden borrar)
+        </li>
+        <li class="punto">El borrado provoca archivos que no son compactos</li>
+        <li class="punto">La ordenación de los datos requiere leer todos los datos, reorganizarlos en memoria y volver a
+            grabarles en el archivo en el orden correcto. Se trata de una operación excesivamente lenta
+        </li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">2</span>ficheros de acceso directo o aleatorio</h4>
+    <p class="Normal2">En estos ficheros se puede leer una posición concreta directamente; bastará saber la posición
+        exacta (normalmente en bytes) del dato a leer para obtenerle. Es decir, posicionarnos en el quinto registro se
+        haría de golpe, con una sola instrucción. Lo único que necesitamos saber el tamaño de cada registro, que en este
+        tipo de ficheros debe de ser el mismo. Suponiendo que cada registro ocupa 100 bytes, el quinto registro
+        comenzará en la posición 400. A partir de esa posición podremos leer todos los datos del registro.</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/13.png" alt=""></p>
+    <h5 class="titulo5"><span class="numeroOculto">1</span>ventajas</h5>
+    <ul>
+        <li class="punto">Acceso rápido a un registro concreto. No necesita leer los datos anteriores</li>
+        <li class="punto">La modificación de datos es más sencilla</li>
+        <li class="punto">Permiten acceso secuencial además del aleatorio (por lo que mejoran el caso anterior)</li>
+        <li class="punto">Permiten tanto leer como escribir a sin necesidad de cerrar el archivo.</li>
+        <li class="punto">Aptos para organizaciones <strong class="Negritta">relativas directas</strong>, en las que la
+            clave del registro se relaciona con su posición en el archivo.
+        </li>
+    </ul>
+    <h5 class="titulo5"><span class="numeroOculto">2</span>desventajas</h5>
+    <ul>
+        <li class="punto">Salvo en archivos relativos directos, no es apto por sí mismo para usar en bases de datos, ya
+            que los datos se organizan en base a una clave que casi nunca coincide con la posición del registro en el
+            archivo
+        </li>
+        <li class="punto">No se pueden borrar datos (sí marcar para borrado, pero generarán huecos)</li>
+        <li class="punto">Las consultas sobre multitud de registros son más lentas que en el caso anterior.</li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">3</span></h4>
+    <h4 class="titulo"><span class="numeroOculto">4</span>ficheros secuenciales encadenados</h4>
+    <p class="Normal2">Son ficheros con registros grabados secuencialmente que podríamos recorrer registro a registro o
+        de forma aleatoria. Además cada registro posee un campo que contiene la dirección de otro registro (a este tipo
+        de campos se les llama <strong class="Negritta">punteros</strong>). Cada registro usa su puntero para indicar la
+        dirección del siguiente registro. Usando los punteros podremos recorrer los registros en un orden concreto. </p>
+    <p class="Normal">Cuando aparece un nuevo registro, se añade al final del archivo, pero los punteros se reordenan
+        para que se mantenga el orden. </p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/14.png" alt=""></p>
+    <h5 class="titulo5"><span class="numeroOculto">1</span>ventajas</h5>
+    <ul>
+        <li class="punto">El fichero mantiene el orden en el que se añadieron los registros y un segundo orden en base a
+            una clave. Incluso añadiendo más punteros a cada registro podremos establecer más formas de ordenar los
+            registros.
+        </li>
+        <li class="punto">La operación de ordenación no requiere reorganizar todo el fichero, sino sólo modificar los
+            punteros
+        </li>
+        <li class="punto">Posee las mismas ventajas que el acceso secuencial y el acceso aleatorio</li>
+    </ul>
+    <h5 class="titulo5"><span class="numeroOculto">2</span>desventajas</h5>
+    <ul>
+        <li class="punto">No se borran los registros, sino que se marcan para ser ignorados. Por lo que se malgasta
+            espacio
+        </li>
+        <li class="punto">Añadir registros o modificar las claves son operaciones que requieren recalcular los punteros
+            por lo que llevan más tiempo que en los casos anteriores
+        </li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">5</span>ficheros secuenciales indexados</h4>
+    <p class="Normal2">Se utilizan dos ficheros para los datos, uno posee los registros almacenados de forma secuencial,
+        pero que permite su acceso aleatorio. El otro posee una tabla con punteros a la posición ordenada de los
+        registros. Ese segundo fichero es el <strong class="Negritta">índice,</strong> una tabla con la ordenación
+        deseada para los registros y la posición que ocupan en el archivo.</p>
+    <p class="Normal">El archivo de índices posee unas cuantas entradas sólo en las que se indica la posición de ciertos
+        valores claves en el archivo (cada 10, 15 ,20,... registros del archivo principal se añade una entrada en el de
+        índices). El archivo principal tiene que estar siempre ordenado y así cuando se busca un registro, se busca su
+        valor clave en la tabla de índices, la cual poseerá la posición del registro buscado. Desde esa posición se
+        busca secuencialmente el registro hasta encontrarlo.</p>
+    <p class="Normal">Existe un tercer archivo llamado de <strong class="Negritta">desbordamiento</strong> u <strong class="Negritta">overflow</strong> en el que se colocan los nuevos registros que se van añadiendo (para no
+        tener que ordenar el archivo principal cada vez que se añade un nuevo registro) este archivo está desordenado.
+        Se utiliza sólo si se busca un registro y no se encuentra en el archivo principal. En ese caso se recorre todo
+        el archivo de overflow hasta encontrarlo. </p>
+    <p class="Normal"><span lang="en-US">Para no tener demasiados archivos en overflow (lo que restaría velocidad ya que no utilizaríamos el archivo de índices que es el que da velocidad), cada cierto tiempo se reorganiza el archivo principal, ordenando los datos en el orden correcto y recalculando el archivo de índices. Ejemplo:</span>
+    </p>
+    <p class="Normal"><span lang="en-US"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/15.png" alt=""></span></p>
+    <h5 class="titulo5"><span class="numeroOculto">1</span> ventajas</h5>
+    <ul>
+        <li class="punto">El archivo está siempre ordenado de forma secuencial en base a una clave. Por lo que la simple
+            lectura secuencial del archivo obtiene un listado ordenado de los datos.
+        </li>
+        <li class="punto">La búsqueda de datos es rapidísima</li>
+        <li class="punto">Permite la lectura secuencial (que además será en el orden de la clave)</li>
+        <li class="punto">Añadir un solo registro no conlleva un tiempo extra como en el caso anterior</li>
+    </ul>
+    <h5 class="titulo5"><span class="numeroOculto">2</span>desventajas</h5>
+    <ul>
+        <li class="punto">Para un uso óptimo hay que reorganizar el archivo principal cada cierto tiempo y esta
+            operación es muy costosa ya que hay que reescribir de nuevo y de forma ordenada todo el archivo con el área
+            primeria, además de reorganizar el área de índices y eliminar el fichero de desbordamiento. Es tan costosa
+            que se hace muy poco a menudo, pero en archivos de datos que se modifican muy a menudo, no reorganizar
+            provocaría un área de desbordamiento enorme y perderíamos las ventajas de este modelo.
+        </li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">6</span>ficheros indexado-encadenados</h4>
+    <p class="Normal2">Utiliza punteros e índices, es una variante encadenada del caso anterior. Hay un fichero de
+        índices equivalente al comentado en el caso anterior y otro fichero de tipo encadenado con punteros a los
+        siguientes registros. La diferencia está en que este segundo fichero que contiene el área primaria de los datos,
+        no está ordenado secuencialmente, sino que el orden se realizaría recorriendo un puntero (como en el caso de los
+        ficheros secuencialmente encadenados). </p>
+    <p class="Normal">Cuando se añaden registros se añaden en un tercer fichero llamado de desbordamiento u <strong class="Negritta" lang="en-US">overflow</strong><span lang="en-US">. En el área de desbordamiento los datos se almacenan secuencialmente, se accede a ellos si se busca un dato y no se encuentra el área primaria.</span>
+    </p>
+    <h5 class="titulo5"><span class="numeroOculto">1</span>ventajas</h5>
+    <ul>
+        <li class="punto">Posee las mismas ventajas que el modelo anterior además de que la reordenación es más rápida
+            ya que sólo requiere modificar los punteros y el área de índices (no requiere reordenar todos los datos del
+            área primaria).
+        </li>
+    </ul>
+    <h5 class="titulo5"><span class="numeroOculto">2</span></h5>
+    <h5 class="titulo5"><span class="numeroOculto">3</span>desventajas</h5>
+    <ul>
+        <li class="punto">Requieren compactar los datos a menudo para reorganizar índices y quitar el fichero de
+            desbordamiento y es una operación lenta (aunque mucho menos lenta que en el caso anterior)
+        </li>
+    </ul>
+    <div>
+        <div id="_idContainer022">
+            <div id="_idContainer020" class="imagen">
+                <img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/archivos-secuencial-indexoencadenado.png" alt="">
+            </div>
+            <div id="_idContainer021" class="marcoEpigrafe">
+                <p class="epigrafe"><span class="numeroEpigrafe">Ilustración 16. </span>Ejemplo fichero secuencial
+                    indexado y encadenado</p>
+            </div>
+        </div>
+    </div>
+    <h3 class="titulo3"><span class="numero3">[a1.4]</span><a id="_idTextAnchor028"></a>operaciones relacionadas con uso
+        de archivos en bases de datos</h3>
+    <h4 class="titulo"><span class="numeroOculto">1</span>borrado y recuperación de registros</h4>
+    <p class="Normal2">Algunos de los tipos de ficheros vistos anteriormente no admiten el borrado real de datos, sino
+        que sólo permiten añadir un dato que indica si el registro está borrado o no. Esto es interesante ya que permite
+        anular una operación de borrado. Por ello esta técnica de marcar registros, se utiliza casi siempre en todos los
+        tipos de archivos.</p>
+    <p class="Normal">En otros casos los datos antes de ser eliminados del todo pasan a un fichero especial (conocido
+        como <strong class="Negritta">papelera</strong>) en el que se mantienen durante cierto tiempo para su posible
+        recuperación.</p>
+    <h4 class="titulo"><span class="numeroOculto">2</span>fragmentación y compactación de datos</h4>
+    <p class="Normal2">La fragmentación en un archivo hace referencia a la posibilidad de que éste tenga huecos
+        interiores debido a borrado de datos u a otras causas. Causa los siguientes problemas:</p>
+    <ul>
+        <li class="punto">Mayor espacio de almacenamiento</li>
+        <li class="punto">Lentitud en las operaciones de lectura y escritura del fichero</li>
+    </ul>
+    <p class="Normal2">Por ello se requiere <strong class="Negritta">compactar</strong> los datos. Esta técnica permite
+        eliminar los huecos interiores a un archivo. Las formas de realizarla son:</p>
+    <ul>
+        <li class="punto"><strong class="Negritta">Reescribir el archivo para eliminar los huecos.</strong> Es la mejor,
+            pero lógicamente es la más lenta al requerir releer y reorganizar todo el contenido del fichero.
+        </li>
+        <li class="punto"><strong class="Negritta">Aprovechar huecos</strong>. De forma que los nuevos registros se
+            inserten en esos huecos. Esta técnica suele requerir un paso previo para reorganizar esos huecos.
+        </li>
+    </ul>
+    <h4 class="titulo"><span class="numeroOculto">3</span>compresión de datos</h4>
+    <p class="Normal2">En muchos casos para ahorrar espacio de almacenamiento, se utilizan técnicas de compresión de
+        datos. La ventaja es que los datos ocupan menos espacio y la desventaja es que al manipular los datos hay que
+        descomprimirlos lo que hace que las operaciones básicas con el fichero se ralentizan. </p>
+    <h4 class="titulo"><span class="numeroOculto">4</span>cifrado de datos</h4>
+    <p class="Normal2">Otra de las opciones habituales sobre ficheros de datos es utilizar técnicas de cifrado para
+        proteger los ficheros en caso de que alguien no autorizado se haga con el fichero. Para leer un fichero de
+        datos, haría falta descifrar el fichero. Para descifrar necesitamos una clave o bien aplicar métodos de
+        descifrado; lógicamente cuanto mejor sea la técnica de cifrado, más difícil será descifrar los datos.</p>
+    <h1 class="apendice" id="h26"><span class="numero2">[a2] </span><a id="_idTextAnchor029"></a><a id="_idTextAnchor030"></a>estándares
+        y modelo ANSI</h1>
+    <p class="Normal2">Es uno de los aspectos que todavía sigue pendiente. Desde la aparición de los primeros gestores
+        de base de datos se intentó llegar a un acuerdo para que hubiera una estructura común para todos ellos, a fin de
+        que el aprendizaje y manejo de este software fuera más provechoso y eficiente.</p>
+    <p class="Normal">El acuerdo nunca se ha conseguido del todo, no hay estándares aceptados del todo. Aunque sí hay
+        unas cuentas propuestas de estándares que sí funcionan como tales.</p>
+    <h3 class="titulo3"><span class="numero3">[a2.1]</span><a id="_idTextAnchor031"></a>organismos de estandarización
+    </h3>
+    <p class="Normal2">Los intentos por conseguir una estandarización han estado promovidos por organismos de todo tipo.
+        Algunos son estatales, otros privados y otros promovidos por los propios usuarios. Los tres que han tenido gran
+        relevancia en el campo de las bases de datos son <strong class="Negritta">ANSI/SPARC/X3</strong>, <strong class="Negritta">CODASYL</strong> y <strong class="Negritta">ODMG </strong>(éste sólo para las bases de
+        datos orientadas a objetos). Los organismos grandes (que recogen grandes responsabilidades) dividen sus tareas
+        en comités, y éstos en grupos de trabajo que se encargan de temas concretos.</p>
+    <h3 class="titulo3"><span class="numero3">[a2.2]</span><a id="_idTextAnchor032"></a>ISO/JTC1/SC21/WG3</h3>
+    <ul>
+        <li class="punto"><strong class="Negritta" lang="en-US">ISO</strong><strong class="Negritta" lang="en-US"> </strong><em class="cursiva" lang="en-US">(International Organization for Standardization)</em><span lang="en-US">. Es un organismo internacional de definición de estándares de gran prestigio</span><strong class="Negritta" lang="en-US">.</strong></li>
+        <li class="punto"><strong class="Negritta" lang="en-US">IEC </strong><em class="cursiva" lang="en-US">(International
+                Electrotechnical Commission).</em><span lang="en-US"> Organismo de definición de normas en ambientes electrónicos. Es la parte, en definitiva de ISO, dedicada a la creación de estándares.</span>
+        </li>
+        <li class="punto"><strong class="Negritta" lang="en-US">JTC 1 </strong><em class="cursiva" lang="en-US">(Joint
+                Technical Committee).</em><span lang="en-US"> Comité parte de IEC dedicado a la tecnología de la información (informática). En el campo de las bases de datos, el subcomité </span><strong class="Negritta" lang="en-US">SC 21 </strong><span lang="en-US">(en el que participan otros organismos nacionales, como el español AENOR) posee</span><strong class="Negritta" lang="en-US"> </strong><span lang="en-US">un grupo de trabajo</span><strong class="Negritta" lang="en-US"> </strong><span lang="en-US">llamado </span><strong class="Negritta" lang="en-US">WG
+                3</strong><span lang="en-US"> que se dedica a las bases de datos. Este grupo de trabajo es el que define la estandarización del lenguaje SQL entre otras cuestiones.</span>
+        </li>
+    </ul>
+    <p class="Normal2">Entre los trabajos que realiza el grupo WG3 está la normalización de <strong class="Negritta">SQL</strong>, además de otras normas de estandarización.</p>
+    <h3 class="titulo3"><span class="numero3">[a2.3]</span><a id="_idTextAnchor033"></a>DBTG/Codasyl</h3>
+    <p class="Normal2">Codasyl (<em class="cursiva">COnference on DAta SYstem Languages</em><strong class="Negritta">)</strong> es el nombre de una conferencia iniciada en el año 1959 y que dio lugar a un
+        organismo con la idea de conseguir un lenguaje estándar para la mayoría de máquinas informáticas. Participaron
+        organismos privados y públicos del gobierno de Estados Unidos con la finalidad de definir estándares. Su primera
+        tarea fue desarrollar el lenguaje <strong class="Negritta">COBOL</strong> y otros elementos del análisis, diseño
+        y la programación de ordenadores.</p>
+    <p class="Normal">La tarea real de estandarizar esos lenguajes se la cedieron al organismo ANSI, pero las ideas e
+        inicios de muchas tecnologías se idearon en el consorcio Codasyl.</p>
+    <p class="Normal">En 1967 se crea un <strong class="Negritta">grupo de tareas para bases de datos</strong> <em class="cursiva">(Data Base Task Group</em>) y este grupo definió el <strong class="Negritta">modelo en red
+            de bases de datos</strong> y su integración con COBOL. A este modelo en red se le denomina <strong class="Negritta">modelo Codasyl</strong> o modelo <strong class="Negritta">DBTG</strong> y fue finalmente
+        aceptado por la ANSI.</p>
+    <h3 class="titulo3"><span class="numero3">[a2.4]</span><a id="_idTextAnchor034"></a>ANSI/X3/SPARC</h3>
+    <p class="Normal2"><strong class="Negritta">ANSI</strong> (<em class="cursiva">American National Standards
+            Institute</em>) es un organismo científico de Estados Unidos que ha definido diversos estándares en el campo
+        de las bases de datos. <strong class="Negritta">X3</strong> es la parte de ANSI encargada de los estándares en
+        el mundo de la electrónica. Finalmente <strong class="Negritta">SPARC, </strong><em class="cursiva">System
+            Planning and Repairments Committee</em><span class="ttexto">, </span>comité de planificación de sistemas y
+        reparaciones es una subsección de X3 encargada de los estándares en Sistemas Informáticos en especial del campo
+        de las bases de datos. Su logro fundamental ha sido definir un modelo de referencia para las bases de datos (que
+        se estudiará posteriormente).</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/16.png" alt=""></p>
+    <p class="Normal2">En la actualidad ANSI para Estados Unidos e ISO para todo el mundo son nombres equivalentes en
+        cuanto a estandarización de bases de datos, puesto que se habla ya de un único modelo de sistema de bases de
+        datos.</p>
+    <h3 class="titulo3"><span class="numero3">[a2.5]</span><a id="_idTextAnchor035"></a>modelo ANSI/X3/SPARC</h3>
+    <p class="Normal2">El organismo ANSI ha marcado la referencia para la construcción de SGBD. El modelo definido por
+        el grupo de trabajo SPARC se basa en estudios anteriores en los que se definían tres niveles de abstracción
+        necesarios para gestionar una base de datos. ANSI profundiza más en esta idea y define cómo debe ser el proceso
+        de creación y utilización de estos niveles. </p>
+    <p class="Normal">En el modelo ANSI se indica que hay tres modelos: <strong class="Negritta">externo</strong>,
+        <strong class="Negritta">conceptual</strong> e <strong class="Negritta">interno.</strong> Se entiende por
+        modelo, el conjunto de normas que permiten crear esquemas (diseños de la base de datos). </p>
+    <p class="Normal">Los esquemas externos reflejan la información preparada para el usuario final, el esquema
+        conceptual refleja los datos y relaciones de la base de datos y el esquema interno la preparación de los datos
+        para ser almacenados. </p>
+    <p class="Normal">El esquema conceptual contiene la información lógica de la base de datos. Su estructuración y las
+        relaciones que hay entre los datos. </p>
+    <p class="Normal">El esquema interno contiene información sobre cómo están almacenados los datos en disco. Es el
+        esquema más cercano a la organización real de los datos.</p>
+    <p class="Normal">En definitiva el modelo ANSI es una propuesta teórica sobre cómo debe de funcionar un sistema
+        gestor de bases de datos (sin duda, la propuesta más importante). Su idea es la siguiente:</p>
+    <div>
+        <div id="_idContainer026">
+            <div id="_idContainer024" class="imagen">
+                <img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/niveles-ANSI.png" alt="">
+            </div>
+            <div id="_idContainer025" class="marcoEpigrafe">
+                <p class="epigrafe"><span class="numeroEpigrafe">Ilustración 18. </span><a id="_idTextAnchor036"></a>Niveles
+                    en el modelo ANSI</p>
+            </div>
+        </div>
+    </div>
+    <p class="Normal2">En la <a href="https://jorgesanchez.net/manuales/gbd/sgbd.html">Ilustración 18</a>, el paso de un esquema a otro se realiza utilizando una
+        interfaz o función de traducción. En su modelo, la ANSI no indica cómo se debe realizar esta función, sólo que
+        debe existir.</p>
+    <p class="Normal">La arquitectura completa (<a href="https://jorgesanchez.net/manuales/gbd/sgbd.html">Ilustración 19</a>) está dividida en dos secciones, la zona
+        de definición de datos y la de manipulación. Esa arquitectura muestra las funciones realizadas por humanos y las
+        realizadas por programas. </p>
+    <p class="Normal">En la fase de <strong class="Negritta">definición</strong>, una serie de interfaces permiten la
+        creación de los <strong class="Negritta">metadatos</strong> que se convierten en el eje de esta arquitectura. La
+        creación de la base de datos comienza con la elaboración del esquema conceptual realizándola el administrador de
+        la empresa (actualmente es el diseñador, pero ANSI no lo llamó así). Ese esquema se procesa utilizando un
+        procesador del esquema conceptual (normalmente una herramienta <strong class="Negritta">CASE</strong>, <em class="cursiva">interfaz 1</em> del dibujo anterior) que lo convierte en los metadatos (<em class="cursiva">interfaz
+            2</em>).</p>
+    <p class="Normal">La <em class="cursiva">interfaz 3</em> permite mostrar los datos del esquema conceptual a los
+        otros dos administradores: el administrador de la base de datos y el de aplicaciones (el desarrollador).
+        Mediante esta información construyen los esquemas internos y externos mediante las <em class="cursiva">interfaces
+            4 y 5 </em>respectivamente, los procesadores de estos esquemas almacenan la información correspondiente a
+        estos esquemas en los metadatos (<em class="cursiva">interfaces 6 y 7</em>).</p>
+    <p class="Normal"><img src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/17.png" alt=""></p>
+    <p class="Normal2">En la fase de <strong class="Negritta">manipulación</strong> el usuario puede realizar
+        operaciones sobre la base de datos usando la <em class="cursiva">interfaz 8 </em>(normalmente una aplicación)
+        esta petición es transformada por el transformador externo/conceptual que obtiene el esquema correspondiente
+        ayudándose también de los metadatos (<em class="cursiva">interfaz 9</em>). El resultado lo convierte otro
+        transformador en el esquema interno (<em class="cursiva">interfaz 10</em>) usando también la información de los
+        metadatos (<em class="cursiva">interfaz 11</em>). Finalmente del esquema interno se pasa a los datos usando el
+        último transformador (<em class="cursiva">interfaz 12</em>) que también accede a los metadatos (<em class="cursiva">interfaz 13</em>) y de ahí se accede a los datos (<em class="cursiva">interfaz 14</em>).
+        Para que los datos se devuelvan al usuario en formato adecuado para él se tiene que hacer el proceso contrario
+        (observar dibujo).</p>
+    <p class="Normal"><a id="_idTextAnchor037"></a></p>
+</div>
+
+
+</section>
+<!--
+<nav style="left: -561px;">
+    <ul>
+        <li><a href="https://jorgesanchez.net/">&gt; Volver a JorgeSanchez.net</a></li>
+    </ul>
+    
+    
+<ul>
+    <p>Manual de Gestión de Bases de Datos:</p>
+    <li><a href="https://jorgesanchez.net/manuales/gbd/sgbd.html#">˅ Sistemas Gestores de Bases de Datos</a><ul style="display: block;"><li><a href="https://jorgesanchez.net/manuales/gbd/sgbd.html#h21">&gt; datos y archivos</a></li><li><a href="https://jorgesanchez.net/manuales/gbd/sgbd.html#h22">&gt; tipos de
+        gestión de información mediante el ordenador</a></li><li><a href="https://jorgesanchez.net/manuales/gbd/sgbd.html#h23">&gt; funcionamiento de un Sistema Gestor de
+        Bases de Datos</a></li><li><a href="https://jorgesanchez.net/manuales/gbd/sgbd.html#h24">&gt; tipos de SGBD</a></li><li><a href="https://jorgesanchez.net/manuales/gbd/sgbd.html#h25">&gt; archivos</a></li><li><a href="https://jorgesanchez.net/manuales/gbd/sgbd.html#h26">&gt; estándares
+        y modelo ANSI</a></li></ul></li>
+    <li><a href="https://jorgesanchez.net/manuales/gbd/entidad-relacion.html">&gt; Modelo Entidad/Relación</a></li>
+    <li><a href="https://jorgesanchez.net/manuales/gbd/modelo-relacional.html">&gt; Modelo Relacional</a></li>
+    <li><a href="https://jorgesanchez.net/manuales/gbd/diseno-logico-relacional.html">&gt; Diseño lógico de bases de datos relacionales</a></li>
+</ul>
+-->
+
+
+</nav>
+
+<script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/jquery.min.js"></script>
+<script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/jquery.easing.min.js"></script>
+<script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/jquery.scrollTo.min.js"></script>
+<script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/perfect-scrollbar.jquery.min.js"></script><iframe id="google_osd_static_frame_7470439779356" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/saved_resource(1).html"></iframe>
+<script src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/manual.js"></script>
+<!--Analytics-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35972106-1']);
+    _gaq.push(['_setLocalRemoteServerMode']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/ads(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-load-complete="true"></iframe></ins></ins></ins></body><iframe id="google_esf" name="google_esf" src="./Jorge Sánchez. Manual de Gestión de Bases de Datos. Sistemas Gestores de Bases de Datos_files/zrt_lookup.html" data-ad-client="ca-pub-5327277099095933" style="display: none;"></iframe></html>
