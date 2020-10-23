@@ -61,3 +61,13 @@ b)
 ![image-20201022122821606](/home/user22/.config/Typora/typora-user-images/image-20201022122821606.png)
 
 ![image-20201022122844860](/home/user22/.config/Typora/typora-user-images/image-20201022122844860.png)
+
+### 7 Interpreta los modelos
+
+a)
+
+![image-20201023091943835](/home/user22/.config/Typora/typora-user-images/image-20201023091943835.png)
+
+b)
+
+![image-20201023092024520](/home/user22/.config/Typora/typora-user-images/image-20201023092024520.png)
